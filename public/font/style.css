@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('./WorkSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'WorkSans-SemiBold';
+  src: url('./WorkSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('./Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('./Lato-Bold.ttf');
+}
