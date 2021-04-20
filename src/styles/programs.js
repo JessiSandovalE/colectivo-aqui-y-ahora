@@ -17,6 +17,9 @@ export const ProgramsStyle = style({
     },
     '& p':{
       color: Color.grey,
+      fontFamily: 'Lato-Regular',
+      lineHeight:'1.41',
+      letterSpacing:'0.5px'
     },
     '& .title':{
       color: Color.darkBlue,

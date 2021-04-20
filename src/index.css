@@ -13,6 +13,17 @@ body {
 /* .MuiAccordionSummary-root{
   border-bottom: 2px solid #0099DB  !important;
 } */
-p {
+.MuiTypography-body1{
+  font-family: 'Lato-Regular';
+}
+p li {
   margin-top: 0px;
+  line-height:1.41;
+  letter-spacing:0.5px;
+  font-family: 'Lato-Regular';
+}
+
+h4 {
+  line-height:1.4;
+  font-family:'Lato-Bold';
 }

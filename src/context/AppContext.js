@@ -41,11 +41,45 @@ const AppProvider = ({children})=> {
       text: '<p>Procesos terapéuticos dirigido a personas que se encuentran en fases iniciales (de carácter experimental o de baja frecuencia) y en quienes aún no compromete diversas áreas de funcionamiento– y en las áreas donde se evidencia compromiso– este no se considera significativo. En los pacientes se observa algún nivel de vulnerabilidad en las dimensiones psicológica y social más que una problemática claramente establecida.</p><p>Son sesiones de psicoterapia individual de 1 hora aproximadamente, habitualmente con una frecuencia semanal. Su extensión en el tiempo depende de las características del consultante y la problemática específica a trabajar.</p><ul><li> La atención se puede realizar presencial o virtual según la preferencia del paciente.</li></ul>'
     }
   ])
+  const [about, setAbout ] = useState([
+    {
+      icon: './assets/bi_person-badge.png',
+      title: 'Más de 1200 personas',
+      text: 'se han recuperado con nosotros.'
+    },
+    {
+      icon: './assets/clarity_world-line.png',
+      title: 'Efectividad del 72,4%',
+      text: 'en nuestros tratamientos.'
+    },
+    {
+      icon: './assets/codicon_home.png',
+      title: '99% de las familias',
+      text: 'que hacen tratamiento con nosotros nos recomendarían como primera opción.'
+    }
+  ])
+  const [methodology, setMethodology] = useState([
+    {
+      title: 'Nuestra metodología:',
+      description:'No solo aborda el proceso individual, también incluimos metodologías de abordaje complementarias como terapia de familia, terapia individual, grupos de apoyo y apoyo en psiquiatría cuando se requiere.'
+    },
+    {
+      title: 'Somos de base científica:',
+      description:'Los componentes del abordaje corresponden a lo que la evidencia sugiere dentro de intervenciones efectivas para el tratamiento.'
+    },
+    {
+      title: 'Somos un equipo especializado e interdisciplinario:',
+      description:'Contamos con psicoterapeutas, y médicos con la mejor formación y experiencia para el diagnóstico y tratamiento con estudios de posgrado y maestría; liderados por <b>Efrén Martínez Ph. D.</b>'
+    }
+  ])
+
   return(
     <Provider
       value={{
         menu,setMenu,
-        programs, setPrograms
+        programs, setPrograms,
+        about, setAbout,
+        methodology, setMethodology
       }}
     >
       {children}

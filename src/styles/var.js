@@ -13,6 +13,7 @@ export const Color = {
 
 export const Font = {
   megaBig: '64px',
+  midBig:'51px',
   big: '36px',
   medium: '25px',
   intermedium: '21px',
