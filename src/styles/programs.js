@@ -9,11 +9,14 @@ export const ProgramsStyle = style({
   $nest: {
     '& h2':{
       color: Color.darkBlue,
-      fontSize: Font.big,
+      fontSize: Font.midBig,
+      lineHeight:'1.1',
+      letterSpacing:'normal'
     },
     '& h4':{
       color: Color.darkBlue,
       fontFamily: 'Lato-Regular',
+      fontSize:Font.principal
     },
     '& p':{
       color: Color.grey,
@@ -24,27 +27,34 @@ export const ProgramsStyle = style({
     '& .title':{
       color: Color.darkBlue,
       fontFamily: 'Lato-Regular',
-      fontSize: Font.intermedium
+      fontSize: Font.intermedium,
+      lineHeight: '1.52',
+      letterSpacing: '0.15px'
     },
     '& .image': {
       width:'40%',
       marginTop:'50px'
     },
     '& .info': {
-      width: '60%',
-      padding: '50px 0px 50px 100px',
-      boxSizing:'border-box'
+      padding: '50px 0px 50px 0px',
+      boxSizing:'border-box',
+      width:'540px',
     }
   },
   '& .MuiAccordionSummary-root': {
-    borderBottom: '1.5px solid #006890',
+    borderBottom: '1px solid #006890',
     padding: '0px'
   },
   '& .MuiAccordionDetails-root': {
-    padding: 0
+    padding: 0,
+    justifyContent: 'space-between'
   },
   '& .MuiAccordion-root:before': {
     height: '0px'
+  },
+  '& .MuiSvgIcon-root':{
+    color: Color.darkBlue,
+    fontSize:'28px'
   }
 
 })
