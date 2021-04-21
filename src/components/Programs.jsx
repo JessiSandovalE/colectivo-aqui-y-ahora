@@ -23,22 +23,22 @@ const Programs = () => {
         key={item.id}
         expanded={expanded === item.id}
         onChange={handleChange(item.id)}
-      >
-        <AccordionSummary
-          expandIcon={<ArrowUpwardIcon />}
-          id={item.id}
         >
-          <Typography className="title">{item.title}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <div className="image">
-            <img src={item.image} alt={item.title} width='100%'/>
-          </div>
-          <Typography className="info">
-           {parse(item.text)}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+          <AccordionSummary
+            expandIcon={<ArrowUpwardIcon />}
+            id={item.id}
+          >
+            <Typography className="title">{item.title}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="image">
+              <img src={item.image} alt={item.title} width='100%'/>
+            </div>
+            <Typography className="info">
+              {parse(item.text)}
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
       ))}
     </div>
   )

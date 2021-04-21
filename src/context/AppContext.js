@@ -73,13 +73,29 @@ const AppProvider = ({children})=> {
     }
   ])
 
+  const [helpOption, setHelpOption] = useState([
+    {
+      number: '1',
+      text: 'Empoderarte, de modo que puedas llevar a cabo la conversación y romper con el discurso de tu ser amado.'
+    },
+    {
+      number: '2',
+      text: 'Responder asertivamente a las maniobras evasivas – excusas, justificaciones y demás estrategias de tu familiar – de modo que puedas romper el ciclo y convencerlo de iniciar un proceso de transformación.'
+    },
+    {
+      number: '3',
+      text: 'Ayudarte a dejar el miedo a un lado y así enfrentar a tu ser querido.'
+    }
+  ])
+
   return(
     <Provider
       value={{
         menu,setMenu,
         programs, setPrograms,
         about, setAbout,
-        methodology, setMethodology
+        methodology, setMethodology,
+        helpOption, setHelpOption
       }}
     >
       {children}
