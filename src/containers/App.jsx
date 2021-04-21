@@ -11,8 +11,7 @@ import {AppProvider} from '../context/AppContext'
 const App = () => {
   return (
     <AppProvider>
-    {/*   <Menu/>
-       */}
+       <Menu/>
        <Banner/>
        <About/>
        <Methodology/>

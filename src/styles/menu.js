@@ -50,6 +50,9 @@ export const menuStyle = style({
           padding: '10px 30px'
         }
       }
+    },
+    '@media screen and (max-width: 700px)':{
+      display:'none'
     }
   }
 })
