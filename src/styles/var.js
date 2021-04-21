@@ -41,5 +41,10 @@ export const button = style({
 export const container = style({
   width:'100%',
   padding:'0 140px',
-  boxSizing:'border-box'
+  boxSizing:'border-box',
+  $nest:{
+    '@media screen and (max-width: 700px)':{
+      padding:'0 16px',
+    }
+  }
 })

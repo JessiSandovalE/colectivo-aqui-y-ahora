@@ -79,6 +79,37 @@ export const FooterStyle = style({
         }
       }
     },
-  }
+    '@media screen and (max-width: 700px)':{
+      marginBottom:'30px',
+      $nest: {
+        '& .bottom':{
+          gridTemplateColumns: '1fr',
+          paddingTop:'30px',
+          $nest: {
+            '& .contact':{
+              marginTop: '36px'
+            },
+            '& .social':{
+              marginTop: '25px',
+              $nest: {
+                '& .redes':{
+                  marginTop: '24px',
+                  width:'280px'
+                }
+              }
+            }
+          }
+        },
+        '& h3':{
+          fontSize: Font.medium,
+          width:'100%'
+        },
+        '& p':{
+          lineHeight: '1.82'
+        }
+      }
+    }
+  },
+  
 
 })

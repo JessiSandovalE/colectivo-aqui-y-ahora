@@ -11,12 +11,12 @@ import {AppProvider} from '../context/AppContext'
 const App = () => {
   return (
     <AppProvider>
-      <Menu/>
+    {/*   <Menu/>
       <Banner/>
       <About/>
       <Methodology/>
       <Programs/>
-      <Helps/>
+      <Helps/> */}
       <Footer/>
     </AppProvider>
   )
