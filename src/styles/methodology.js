@@ -70,6 +70,9 @@ export const MethodologyStyle = style({
               $nest: {
                 '& p':{
                   width: '100%'
+                },
+                '& h2':{
+                  marginTop:'0px'
                 }
               }
             },
