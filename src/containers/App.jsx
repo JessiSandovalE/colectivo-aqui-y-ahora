@@ -5,7 +5,8 @@ import Programs from '../components/Programs'
 import About from '../components/About'
 import Methodology from '../components/Methodology'
 import Helps from '../components/Helps'
- 
+import Footer from '../components/Footer'
+
 import {AppProvider} from '../context/AppContext'
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Methodology/>
       <Programs/>
       <Helps/>
+      <Footer/>
     </AppProvider>
   )
 }
