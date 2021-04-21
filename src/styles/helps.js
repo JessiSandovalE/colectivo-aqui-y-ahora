@@ -26,7 +26,6 @@ export const HelpsStyle = style({
         $nest: {
           '& .option':{
             display:'flex',
-            //alignItems:'center',
             paddingBottom:'60px',
             $nest: {
               '& .infoOption':{
@@ -34,6 +33,9 @@ export const HelpsStyle = style({
                 margin:'0',
                 marginLeft:'20px',
                 marginTop:'10px'
+              },
+              '@media screen and (max-width: 700px)':{
+                paddingBottom:'30px'
               }
             }
           }
@@ -55,6 +57,22 @@ export const HelpsStyle = style({
    '& p':{
      color: Color.grey,
      width:'530px'
+   },
+   '@media screen and (max-width: 700px)': {
+     '& .helpsInfo': {
+       display:'flex',
+       flexDirection:'column',
+       gridGap: '30px',
+     },
+     '& h2':{
+      fontSize: Font.big,
+     },
+     '& p':{
+      width:'100%'
+    },
+    '& .image':{
+      marginTop:'40px'
+    },
    }
   }
 })

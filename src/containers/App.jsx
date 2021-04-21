@@ -16,7 +16,8 @@ const App = () => {
       <About/>
       <Methodology/>
       <Programs/>
-      <Helps/> */}
+       */}
+       <Helps/>
       <Footer/>
     </AppProvider>
   )
