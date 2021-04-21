@@ -73,6 +73,44 @@ export const AboutStyle = style({
           }
         }
       }
+    },
+    '@media screen and (max-width: 700px)':{
+      marginBottom:'100px',
+      $nest: {
+        '& .aboutImage': {
+          width:'80%'
+        },
+        '& .aboutInfo':{
+          flexDirection:'column',
+          padding:'0 16px',
+          boxSizing:'border-box',
+          $nest: {
+            '& .aboutText':{
+              width:'100%',
+              paddingRight:'0px'
+            }
+          }
+        },
+        '& .aboutSection':{
+          flexDirection:'column',
+          $nest: {
+            '& .aboutSectionImage': {
+              width: '100%',
+              padding: '0px 16px',
+              boxSizing:'border-box'
+            },
+            '& .aboutSectionInfo':{
+              width:'100%',
+              padding: '0px 16px',
+              $nest: {
+                '& .aboutSectionText':{
+                  marginTop:'0px'
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
   }
