@@ -48,7 +48,7 @@ export const ProgramsStyle = style({
   },
   '& .MuiAccordionDetails-root': {
     padding: 0,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   '& .MuiAccordion-root:before': {
     height: '0px'
@@ -56,6 +56,23 @@ export const ProgramsStyle = style({
   '& .MuiSvgIcon-root':{
     color: Color.darkBlue,
     fontSize:'28px'
+  },
+  '@media screen and (max-width: 700px)':{
+    '& .MuiAccordionDetails-root': {
+      flexDirection: 'column'
+    },
+    '& .image': {
+      width:'100%',
+      marginTop:'30px'
+    },
+    '& .info': {
+      padding: '30px 0',
+      boxSizing:'border-box',
+      width:'100%',
+    },
+    '& h2':{
+      fontSize:Font.big
+    }
   }
 
 })

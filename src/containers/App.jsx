@@ -15,8 +15,8 @@ const App = () => {
       <Banner/>
       <About/>
       <Methodology/>
-      <Programs/>
        */}
+       <Programs/>
        <Helps/>
       <Footer/>
     </AppProvider>
