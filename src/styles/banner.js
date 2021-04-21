@@ -4,7 +4,6 @@ import { Color, Font } from './var'
 export const BannerStyle = style({
   width: '100%',
   height:'100vh',
-  //backgroundColor: Color.darkBlue,
   backgroundImage:'url("./assets/principalBanner.png")',
   backgroundSize:'cover',
   marginTop: '-150px',
@@ -24,6 +23,14 @@ export const BannerStyle = style({
       fontWeight:'bold',
       fontStyle:'normal',
       letterSpacing:'normal'
+    },
+    '@media screen and (max-width: 700px)':{
+      backgroundPosition: 'center',
+      $nest: {
+        '& h1':{
+          fontSize:Font.midBig
+        }
+      }
     }
   }
 })

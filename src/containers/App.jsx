@@ -12,9 +12,8 @@ const App = () => {
   return (
     <AppProvider>
     {/*   <Menu/>
-      <Banner/>
-      
        */}
+       <Banner/>
        <About/>
        <Methodology/>
        <Programs/>
