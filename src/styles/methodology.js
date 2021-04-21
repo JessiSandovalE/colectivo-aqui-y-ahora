@@ -33,6 +33,9 @@ export const MethodologyStyle = style({
         },
       }
     },
+    '& .image':{
+      width:'100%'
+    },
     '& .itemInfo': {
       width: '440px',
       display: 'flex',
@@ -51,6 +54,34 @@ export const MethodologyStyle = style({
       fontSize: Font.medium,
       margin: '0',
       marginBottom: '8px',
+    },
+    '@media screen and (max-width: 700px)':{
+      display:'flex',
+      flexDirection:'column',
+      paddingTop:'70px',
+      paddingBottom:'0px',
+      $nest: {
+        '& .itemMethodology': {
+          width:'100%',
+          $nest: {
+            '& .methodologyInfo':{
+              paddingRight:'16px',
+              marginBottom: '47px',
+              $nest: {
+                '& p':{
+                  width: '100%'
+                }
+              }
+            },
+           
+          }
+        },
+        '& .itemInfo':{
+          width:'100%',
+          padding: '70px 16px',
+          boxSizing:'border-box'
+        }
+      }
     }
 
   }

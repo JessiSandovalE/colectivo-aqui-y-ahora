@@ -14,7 +14,7 @@ const Methodology = () => {
           <p>Brindamos herramientas a las personas para recuperarse de las situaciones que los aquejan, enfocándonos en la raíz del problema y abordando temas tan importantes como la motivación para el cambio, estructura de la personalidad, prevención de recaídas y el sentido de vida. </p>
         </div>
         <div className="image">
-          <img src="./assets/efren.png" alt="Efren" />
+          <img src="./assets/efren.png" alt="Efren" width="100%"/>
         </div>
       </div>
       <div className="itemInfo">
