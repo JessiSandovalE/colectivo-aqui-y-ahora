@@ -30,20 +30,28 @@ export const ModalStyle= style({
         boxShadow: '2px 8px 8px 0 rgba(0, 0, 0, 0.1)',
         maxHeight:'700px',
         $nest: {
+          '& .icon': {
+            width:'80%',
+            zIndex:1,
+            marginLeft:'-20px'
+          }
+          ,
           '& .close':{
             position: 'absolute',
             right: '20px',
             top: '10px',
             cursor: 'pointer',
             color: Color.darkBlue,
-            fontSize: Font.medium
+            fontSize: Font.medium,
+            zIndex:'2'
           },
           '& .title':{
             fontSize: Font.big,
             color: Color.darkBlue,
-            marginTop: '15px',
+            marginTop: '-40px',
             fontFamily: 'Lato-Bold',
             lineHeight: '1.22',
+            zIndex:'2'
 
           },
           '& form':{
@@ -215,9 +223,10 @@ export const ModalStyle= style({
           '& .sendTitle': {
             fontSize: Font.big,
             color: Color.green,
-            marginTop: '50px',
+            marginTop: '-50px',
             fontFamily: 'Lato-Bold',
             lineHeight: '1.22',
+            zIndex:'2'
           },
           '& .textSendInfo': {
             fontSize: Font.principal,

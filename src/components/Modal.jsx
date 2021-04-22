@@ -58,6 +58,9 @@ const Modal = () => {
           </div>
           {!dataSend && (
             <>
+            <div className="icon">
+              <img src="./assets/contact.jpeg" alt="" width="100%"/>
+            </div>
               <h3 className="title">
                 Contacto
               </h3>
@@ -154,6 +157,9 @@ const Modal = () => {
            )}
           {dataSend && (
             <>
+              <div className="icon">
+                <img src="./assets/enviada.jpeg" alt="" width="100%"/>
+              </div>
               <h2 className="sendTitle">
                 Tu información ha sido
                 enviada con exito
