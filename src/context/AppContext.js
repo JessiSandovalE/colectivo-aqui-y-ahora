@@ -95,6 +95,8 @@ const AppProvider = ({children})=> {
   const [comment, setComment] = useState('')
   const [autorization, setAutorization] = useState('')
   const [dataSend, setDataSend] = useState(false)
+  const [icon, setIcon] = useState(false)
+  const [open, setOpen] =useState(false)
   return( 
     <Provider
       value={{
@@ -110,7 +112,9 @@ const AppProvider = ({children})=> {
         email, setEmail,
         comment, setComment,
         autorization, setAutorization,
-        dataSend, setDataSend
+        dataSend, setDataSend,
+        icon, setIcon,
+        open, setOpen
       }}
     >
       {children}

@@ -5,9 +5,19 @@ import { AppContext } from '../context/AppContext'
 import { menuStyle } from '../styles/menu'
 import { button } from '../styles/var'
 
-
 const Menu = () => {
- const{ menu, setViewModal } = useContext(AppContext)
+ const{
+   menu, setViewModal,
+   setOpen,open,
+   setIcon,icon
+  } = useContext(AppContext)
+
+ const changeMenu = () => {
+  window.scrollTo(0, 0,)
+  setOpen(!open)
+  setIcon (!icon)
+}
+
   return (
     <div className={menuStyle}>
       <div className="logo">
@@ -24,6 +34,24 @@ const Menu = () => {
           )}
         </div>
         <div className={`${button} btn`} onClick={()=> setViewModal(true)}>Solicitar información</div>
+      </div>
+      <div className={`responsive-nav` + (open ? ' active': '')}>
+        <div className={(open? ' activeMenu': ' inactive')}>
+          <div className="options">
+            {menu.map((item)=>
+                <Link smooth to={item.link} key ={item.title} className="item" onClick={()=>changeMenu()} >
+                  {item.title}
+                </Link>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className='contIcon'>
+          <div className={`hamburgerIcon ` + (icon ? ' active' :'') } onClick={() => changeMenu()} >
+            <div className="lines line-top icon"></div>
+            <div className="lines line-mid icon"></div>
+            <div className="lines line-buttom icon"></div>
+          </div>
       </div>
       <Modal/>
     </div>
