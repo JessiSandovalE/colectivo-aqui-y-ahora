@@ -6,19 +6,19 @@ const AppProvider = ({children})=> {
   const [menu,setMenu] = useState([
     {
       title: 'Quiénes Somos',
-      link: ''
+      link: '/#about'
     },
     {
       title: 'Metodología',
-      link: ''
+      link: '/#methodology'
     },
     {
       title: 'Programas de tratamiento',
-      link: ''
+      link: '/#programs'
     },
     {
       title: '¿Cómo ayudar?',
-      link: ''
+      link: '/#help-us'
     }
   ])
   const [programs, setPrograms] = useState([
@@ -87,7 +87,8 @@ const AppProvider = ({children})=> {
       text: 'Ayudarte a dejar el miedo a un lado y así enfrentar a tu ser querido.'
     }
   ])
-
+  const [ViewModal, setViewModal] = useState(null)
+  const [countries, setCountries] = useState([])
   return(
     <Provider
       value={{
@@ -95,7 +96,9 @@ const AppProvider = ({children})=> {
         programs, setPrograms,
         about, setAbout,
         methodology, setMethodology,
-        helpOption, setHelpOption
+        helpOption, setHelpOption,
+        ViewModal, setViewModal,
+        countries, setCountries
       }}
     >
       {children}

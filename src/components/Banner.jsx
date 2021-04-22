@@ -5,7 +5,7 @@ import { container } from '../styles/var'
 
 const Banner = () => {
   return (
-    <div className={BannerStyle}>
+    <div id="home" className={BannerStyle}>
       <div className= {container}>
         <h1>
           Tratamiento<br/>

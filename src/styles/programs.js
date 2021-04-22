@@ -6,7 +6,7 @@ export const ProgramsStyle = style({
   paddingTop: '50px',
   paddingBottom: '50px',
   fontFamily: 'Lato-Regular',
-  marginBottom:'120px',
+  //marginBottom:'120px',
   $nest: {
     '& h2':{
       color: Color.darkBlue,

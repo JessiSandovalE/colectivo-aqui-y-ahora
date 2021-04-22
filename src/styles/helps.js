@@ -7,6 +7,7 @@ export const HelpsStyle = style({
   display: 'flex',
   flexDirection:'column',
   marginBottom:'120px',
+  paddingTop:'120px',
   $nest: {
   '& .helpsInfo':{
     display:'grid',

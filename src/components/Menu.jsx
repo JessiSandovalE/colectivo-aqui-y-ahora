@@ -1,27 +1,31 @@
 import React, { useContext } from 'react'
-//style
+import { HashLink as Link } from 'react-router-hash-link'
+import Modal from './Modal'
+import { AppContext } from '../context/AppContext'
 import { menuStyle } from '../styles/menu'
 import { button } from '../styles/var'
-//Context
-import { AppContext } from '../context/AppContext'
+
 
 const Menu = () => {
- const{ menu } = useContext(AppContext)
+ const{ menu, setViewModal } = useContext(AppContext)
   return (
     <div className={menuStyle}>
       <div className="logo">
-        <img src='./assets/Logo.png' alt="logo"/>
+        <Link smooth to="/#home">
+          <img src='./assets/Logo.png' alt="logo"/>
+        </Link>
       </div>
       <div className="navbar">
         <div className="options">
           {menu.map((item)=>
-              <a key ="item.title" href={item.link} className="item">
+              <Link  smooth to={item.link} key ={item.title} className="item">
                 {item.title}
-              </a>
+              </Link>
           )}
         </div>
-        <div className={`${button} btn`}>Solicitar información</div>
+        <div className={`${button} btn`} onClick={()=> setViewModal(true)}>Solicitar información</div>
       </div>
+      <Modal/>
     </div>
   )
 }

@@ -7,7 +7,7 @@ import parse from 'html-react-parser'
 const Methodology = () => {
   const {methodology} = useContext(AppContext)
   return (
-    <div className={MethodologyStyle}>
+    <div id="methodology" className={MethodologyStyle}>
       <div className="itemMethodology">
         <div className={`${container} methodologyInfo`}>
           <h2>¿Cómo lo hacemos?</h2>
@@ -19,7 +19,7 @@ const Methodology = () => {
       </div>
       <div className="itemInfo">
         {methodology.map(item =>
-        <div className="item">
+        <div className="item" key ={item.title}>
           <h4>{item.title}</h4>
           <p>{parse(item.description)}</p>
         </div>

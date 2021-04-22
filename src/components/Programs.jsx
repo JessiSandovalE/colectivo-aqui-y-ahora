@@ -16,7 +16,7 @@ const Programs = () => {
     setExpanded(isExpanded ? panel : false)
   }
   return (
-    <div className={`${container} ${ProgramsStyle}`} >
+    <div id="programs" className={`${container} ${ProgramsStyle}`} >
       <h2>Nuestros Programas</h2>
       {programs.map(item => (
         <Accordion
@@ -28,15 +28,18 @@ const Programs = () => {
             expandIcon={<ArrowUpwardIcon />}
             id={item.id}
           >
-            <Typography className="title">{item.title}</Typography>
+              <div className="title">
+              {item.title}
+              </div>
+
           </AccordionSummary>
           <AccordionDetails>
             <div className="image">
               <img src={item.image} alt={item.title} width='100%'/>
             </div>
-            <Typography className="info">
+            <div className="info">
               {parse(item.text)}
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
       ))}

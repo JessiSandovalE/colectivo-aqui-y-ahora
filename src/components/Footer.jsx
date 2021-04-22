@@ -46,9 +46,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="redes">
-            <img src="./assets/et_facebook.png" alt="" srcset=""/>
-            <img src="./assets/et_twitter.png" alt="" srcset=""/>
-            <img src="./assets/et_instagram.png" alt="" srcset=""/>
+            <img src="./assets/et_facebook.png" alt="" />
+            <img src="./assets/et_twitter.png" alt="" />
+            <img src="./assets/et_instagram.png" alt="" />
           </div>
         </div>
       </div>

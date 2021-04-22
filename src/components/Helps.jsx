@@ -7,7 +7,7 @@ const Helps = () => {
   const { helpOption } = useContext(AppContext)
 
   return (
-    <div className={HelpsStyle}>
+    <div id="help-us" className={HelpsStyle}>
       <div className={`${container} helpsInfo`}>
         <div className="item1">
           <h2>¿Quieres ayudar a un ser amado y no sabes por dónde empezar? </h2>

@@ -7,7 +7,7 @@ const About = () => {
     about
   } = useContext(AppContext)
   return (
-    <div className={AboutStyle}>
+    <div id='about' className={AboutStyle}>
       <div className="aboutImage">
         <img src="./assets/Somos.png" alt="Somos" width="100%"/>
       </div>
