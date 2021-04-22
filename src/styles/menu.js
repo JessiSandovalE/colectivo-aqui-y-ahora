@@ -127,7 +127,7 @@ export const menuStyle = style({
           display: 'flex',
           position: 'relative',
           zIndex: '101',
-          margin:'10px 37px ',
+          margin:'10px 16px ',
           backgroundColor: Color.white,
           $nest: {
             '& .lines': {
@@ -135,7 +135,7 @@ export const menuStyle = style({
                 top: '50%',
                 left: '50%',
                 transform: 'translate (-50%, -50%)',
-                height: '3px',
+                height: '2px',
                 width: '50%',
                 backgroundClip: 'padding-box',
                 backgroundColor: Color.darkBlue,
@@ -170,9 +170,10 @@ export const menuStyle = style({
       }
     },
     '@media screen and (max-width: 700px)':{
-      //display:'none'
       justifyContent:'space-between',
       paddingRight:'0px',
+      paddingLeft:'10px',
+      height: '110px',
     }
   }
 })

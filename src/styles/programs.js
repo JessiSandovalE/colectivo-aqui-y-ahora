@@ -40,6 +40,9 @@ export const ProgramsStyle = style({
       padding: '50px 0px 50px 0px',
       boxSizing:'border-box',
       width:'540px',
+    },
+    '& .btnModal':{
+      display: 'none',
     }
   },
   '& .MuiAccordionSummary-root': {
@@ -72,6 +75,13 @@ export const ProgramsStyle = style({
     },
     '& h2':{
       fontSize:Font.big
+    },
+    '& .btnModal':{
+      display: 'block',
+      width:'50%',
+      padding:'10px',
+      alignSelf: 'center',
+      marginBottom:'20px'
     }
   }
 

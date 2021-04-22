@@ -85,6 +85,9 @@ export const FooterStyle = style({
         }
       }
     },
+    '& .btnModal':{
+      display: 'none',
+    },
     '@media screen and (max-width: 700px)':{
       marginBottom:'30px',
       $nest: {
@@ -112,6 +115,14 @@ export const FooterStyle = style({
         },
         '& p':{
           lineHeight: '1.82'
+        },
+        '& .btnModal':{
+          display: 'block',
+          width:'50%',
+          padding:'10px',
+          alignSelf: 'center',
+          marginBottom:'20px',
+          marginTop: '30px'
         }
       }
     }

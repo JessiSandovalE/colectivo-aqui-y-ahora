@@ -26,6 +26,7 @@ export const BannerStyle = style({
     },
     '@media screen and (max-width: 700px)':{
       backgroundPosition: 'center',
+      backgroundImage:'url("./assets/bannerMobile.jpeg")',
       $nest: {
         '& h1':{
           fontSize:Font.midBig
