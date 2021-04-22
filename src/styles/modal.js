@@ -34,8 +34,7 @@ export const ModalStyle= style({
             width:'80%',
             zIndex:1,
             marginLeft:'-20px'
-          }
-          ,
+          },
           '& .close':{
             position: 'absolute',
             right: '20px',
@@ -234,6 +233,10 @@ export const ModalStyle= style({
             lineHeight:'1.41',
             letterSpacing: '0.5px',
             width: '70%'
+          },
+          '@media screen and (max-width: 700px)':{
+            width: '300px',
+            maxHeight:'800px',
           }
         }
      }
