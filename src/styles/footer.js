@@ -62,7 +62,12 @@ export const FooterStyle = style({
       fontSize: Font.principal,
       color: Color.grey,
       margin: '0px',
-      marginTop: '7px'
+    },
+    '& a':{
+      fontSize: Font.principal,
+      color: Color.grey,
+      margin: '0px',
+      textDecoration:'none'
     },
     '& .title': {
       fontSize: Font.intermedium,
@@ -72,6 +77,7 @@ export const FooterStyle = style({
     '& .item': {
       display: 'flex',
       alignItems:'center',
+      marginBottom:'7px',
       $nest:{
         '& p': {
           paddingLeft: '15px',

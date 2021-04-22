@@ -23,16 +23,20 @@ const Footer = () => {
             <img src="./assets/email.png" alt="email"/>
             <p className="title">Correo electrónico</p>
           </div>
-          <p>info@colectivoaquiyahora.org</p>
+          <a href="mailto:info@colectivoaquiyahora.org">info@colectivoaquiyahora.org</a>
           <div className="item phone">
             <img src="./assets/tephone.png" alt="email"/>
             <p className="title">Teléfonos</p>
           </div>
-          <p>
-            +57 313 424 9593 <br/>
-            +57 (1) 618 3341 <br/>
+          <a href="tel:+573134249593">
+            +57 313 424 9593
+          </a>
+          <a href="tel:+5716183341">
+            +57 (1) 618 3341
+          </a>
+          <a href="tel:+5716183341">
             +57 (1) 210 3193
-          </p>
+          </a>
         </div>
         <div className="social">
           <div>
@@ -40,15 +44,25 @@ const Footer = () => {
               <img src="./assets/whatsapp.png" alt="whatsapp"/>
               <p className="title">Whatsapp</p>
             </div>
-            <p>
-              +57 313 424 9593 <br/>
+            <a href="https://wa.me/573134249593" target="_blank" rel='noreferrer'>
               +57 313 424 9593
-            </p>
+            </a>
+            <br/>
+            <a href="https://wa.me/573134249593" target="_blank" rel='noreferrer'>
+              +57 313 424 9593
+            </a>
+
           </div>
           <div className="redes">
-            <img src="./assets/et_facebook.png" alt="" />
-            <img src="./assets/et_twitter.png" alt="" />
-            <img src="./assets/et_instagram.png" alt="" />
+            <a href="https://www.facebook.com/colectivoaquiyahora" target="_blank" rel='noreferrer'>
+              <img src="./assets/et_facebook.png" alt="" />
+            </a>
+            <a href="https://twitter.com/ColectivoAyA" target="_blank" rel='noreferrer'>
+              <img src="./assets/et_twitter.png" alt="" />
+            </a>
+            <a href="https://www.instagram.com/colectivoaya/" target="_blank" rel='noreferrer'>
+              <img src="./assets/et_instagram.png" alt="" />
+            </a>
           </div>
         </div>
       </div>
