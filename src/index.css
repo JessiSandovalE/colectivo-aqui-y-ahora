@@ -27,3 +27,32 @@ h4 {
   line-height:1.4;
   font-family:'Lato-Bold';
 }
+
+.custom-radio-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #909292;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.custom-radio-btn .checkmark {
+  width:12px;
+  height: 12px;
+  background-color: #006890 ;
+  display: none;
+  border-radius:50%
+}
+
+
+
+.custom-radio-btn input{
+  display:none
+}
+.custom-radio-btn input:checked + .checkmark {
+  display: inline-block;
+}

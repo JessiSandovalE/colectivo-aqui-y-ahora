@@ -89,7 +89,13 @@ const AppProvider = ({children})=> {
   ])
   const [ViewModal, setViewModal] = useState(null)
   const [countries, setCountries] = useState([])
-  return(
+  const [ name, setName] = useState('')
+  const [number, setNumber] = useState('')
+  const [email, setEmail] = useState('')
+  const [comment, setComment] = useState('')
+  const [autorization, setAutorization] = useState('')
+  const [dataSend, setDataSend] = useState(false)
+  return( 
     <Provider
       value={{
         menu,setMenu,
@@ -98,7 +104,13 @@ const AppProvider = ({children})=> {
         methodology, setMethodology,
         helpOption, setHelpOption,
         ViewModal, setViewModal,
-        countries, setCountries
+        countries, setCountries,
+        name, setName,
+        number, setNumber,
+        email, setEmail,
+        comment, setComment,
+        autorization, setAutorization,
+        dataSend, setDataSend
       }}
     >
       {children}

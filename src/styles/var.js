@@ -4,6 +4,8 @@ import { style } from 'typestyle'
 
 export const Color = {
   darkBlue: '#006890',
+  mediumBlue: '#0f4572',
+  lightBlue:'#1f7eb2',
   blue: '#0099DB',
   green: '#8CC82D',
   white: '#FFFFFF',

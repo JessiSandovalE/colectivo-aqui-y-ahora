@@ -1,79 +1,168 @@
 import React, { useContext } from 'react'
 import ReactDOM from 'react-dom'
 import { AppContext } from '../context/AppContext'
+//API
+import { createContact } from '../api/contact'
+//Style
 import { ModalStyle } from '../styles/modal'
-import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import { makeStyles } from '@material-ui/core/styles';
-
 import { button } from '../styles/var'
-const useStyles = makeStyles({
-  root: {
-    minWidth: 120,
-    marginTop: 10
-  },
-});
 
 const Modal = () => {
-  const [age, setAge] = React.useState('');
-  const classes = useStyles();
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
   const {
-    ViewModal, setViewModal
+    ViewModal, setViewModal,
+    name, setName,
+    number, setNumber,
+    email, setEmail,
+    comment, setComment,
+    autorization, setAutorization,
+    dataSend, setDataSend
   } = useContext(AppContext)
+
+  const sendContact = () => {
+    const data = {name, number, email, comment, autorization}
+    if(data) {
+      createContact(data)
+        .then (()=> {
+          setName('')
+          setNumber('')
+          setEmail('')
+          setComment('')
+          setAutorization('')
+          setDataSend(true)
+      })
+      .catch(()=> {
+        console.log({
+          message: 'Uy algo salio mal',
+          position: 'bottom-right', error: true
+        })
+    })
+    }
+  }
+
+  const close = () => {
+    setViewModal(null)
+    setDataSend(false)
+    setName('')
+    setNumber('')
+    setEmail('')
+    setComment('')
+    setAutorization('')
+  }
+
   return ViewModal? (
     ReactDOM.createPortal(
       <div className={ModalStyle}>
         <div className="modal-container">
-          <div
-            className="close"
-            onClick={()=> setViewModal(null)}
-          >
+          <div className="close" onClick={()=> close()}>
             X
           </div>
-          <h3 className="title">
-            Contacto
-          </h3>
-          <form>
-            <TextField
-              id="name"
-              label="Nombre Completo"
-              placeholder="Tu nombre y tus apellidos"
-              variant="outlined"
-              fullWidth
-            />
-            <div>
-              <label htmlFor="">Nombre Completo</label>
-              <input type="text" placeholder="Tu nombre y tus apellidos"/>
-            </div>
-            <div>
-              <label htmlFor="">Número de celular</label>
-              <input type="text" placeholder="Número"/>
-            </div>
-            <div>
-              <label htmlFor="">Correo electrónico</label>
-              <input type="text" placeholder="Correo electrónico"/>
-            </div>
-            <div>
-              <label htmlFor="">Comentario (Opcional)</label>
-              <textarea placeholder="¿Cuál es el motivo de tu consulta?">
+          {!dataSend && (
+            <>
+              <h3 className="title">
+                Contacto
+              </h3>
+              <form>
+                <div className="inputFile">
+                  <div className="inputRoot">
+                    <input
+                      type="text"
+                      placeholder="Tu nombre y tus apellidos"
+                      value={name}
+                      onChange={e => setName(e.target.value)}
+                    />
+                    <fieldset aria-hidden="true">
+                      <legend>Nombre Completo</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div className="inputFile">
+                  <div className="inputRoot">
+                    <input
+                      type="text"
+                      placeholder="Número"
+                      value={number}
+                      onChange={e => setNumber(e.target.value)}
+                    />
+                    <fieldset aria-hidden="true">
+                      <legend>Número de celular</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div className="inputFile">
+                  <div className="inputRoot">
+                    <input
+                      type="text"
+                      placeholder="Correo electrónico"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                    />
+                    <fieldset aria-hidden="true">
+                      <legend>Correo electrónico</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div className="inputFile">
+                  <div className="inputRoot">
+                    <textarea
+                      placeholder="¿Cuál es el motivo de tu consulta?"
+                      value={comment}
+                      onChange={e => setComment(e.target.value)}
+                    />
+                    <fieldset aria-hidden="true">
+                      <legend>Comentario (Opcional)</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div className="terms">
+                  <p>
+                    Autorizo el manejo de mis datos personales de acuerdo a las políticas de tratamiento de datos del Colectivo Aqui y Ahora
+                  </p>
+                  <div className="options">
+                    <label>Si</label>
+                    <label className="custom-radio-btn">
+                      <input
+                        type="radio"
+                        id="si"
+                        checked={autorization === 'si'}
+                        onChange = { e => setAutorization('si')}
+                      />
+                      <span className="checkmark"></span>
+                    </label>
 
-              </textarea>
-            </div>
-            <p>
-            Autorizo el manejo de mis datos personales de acuerdo a las políticas de tratamiento de datos del Colectivo Aqui y Ahora
-            </p>
-            <input type="radio" id="male" name="gender" value="male" />
-              <label for="si">Si</label>
-              <input type="radio" id="female" name="gender" value="female" />
-              <label for="no">No</label>
-            <div className={button}>Enviar datos</div>
-          </form>
+                    <label >No</label>
+                    <label className="custom-radio-btn">
+                      <input
+                        type="radio"
+                        id="no"
+                        checked={autorization === 'no'}
+                        onChange = { e => setAutorization('no')}
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div className="send">
+                  <div
+                    className={`${button} btn-contact`}
+                    onClick={()=> sendContact()}
+                  >
+                    Enviar datos
+                  </div>
+                </div>
+              </form>
+            </>
+           )}
+          {dataSend && (
+            <>
+              <h2 className="sendTitle">
+                Tu información ha sido
+                enviada con exito
+              </h2>
+              <p className="textSendInfo">
+                 Nuestro equipo se contactará contigo en menos de 48 horas.
+              </p>
+            </>
+          )}
         </div>
       </div>,
      document.getElementById('modal')
