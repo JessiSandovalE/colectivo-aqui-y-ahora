@@ -42,6 +42,8 @@ export const menuStyle = style({
       alignItems:'center',
       justifyContent:'space-between',
       borderRadius:'5px',
+      '-webkit-box-shadow': '0px 4px 11px -10px #000000',
+      boxShadow: '0px 4px 11px -10px #000000',
       $nest: {
         '& .options': {
           width: '70%',
