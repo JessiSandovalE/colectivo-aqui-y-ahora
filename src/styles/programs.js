@@ -25,6 +25,12 @@ export const ProgramsStyle = style({
       lineHeight:'1.41',
       letterSpacing:'0.5px'
     },
+    '& li':{
+      color: Color.grey,
+      fontFamily: 'Lato-Regular',
+      lineHeight:'1.41',
+      letterSpacing:'0.5px'
+    },
     '& .title':{
       color: Color.darkBlue,
       fontFamily: 'Lato-Regular',
@@ -76,6 +82,7 @@ export const ProgramsStyle = style({
     '& h2':{
       fontSize:Font.big
     },
+
     '& .btnModal':{
       display: 'block',
       width:'50%',
