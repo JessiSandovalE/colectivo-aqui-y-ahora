@@ -292,6 +292,9 @@ export const ModalStyle= style({
                   '& .btn-contact':{
                     padding: '10px'
                   },
+                  '& button':{
+                    border: 'none'
+                  },
                   '@media screen and (max-width: 700px)':{
                     justifyContent:'center'
                   }
