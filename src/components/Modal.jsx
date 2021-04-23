@@ -56,7 +56,7 @@ const Modal = () => {
     getCountries()
       .then(response => response.json())
       .then(result => setCountries(result))
-  },[])
+  },[setCountries])
 
   return ViewModal? (
     ReactDOM.createPortal(
