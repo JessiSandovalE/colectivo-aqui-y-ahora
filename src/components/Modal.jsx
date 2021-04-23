@@ -85,6 +85,12 @@ const Modal = () => {
       .then(result => setCountries(result))
   },[setCountries])
 
+  if(dataSend){
+    setTimeout(() => {
+      close()
+    }, 1500);
+  }
+
   return ViewModal? (
     ReactDOM.createPortal(
       <div className={ModalStyle}>
@@ -221,6 +227,7 @@ const Modal = () => {
               </form>
             </>
            )}
+
           {dataSend && (
             <>
               <div className="icon">

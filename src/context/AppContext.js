@@ -97,7 +97,7 @@ const AppProvider = ({children})=> {
   const [dataSend, setDataSend] = useState(false)
   const [icon, setIcon] = useState(false)
   const [open, setOpen] =useState(false)
-  return( 
+  return(
     <Provider
       value={{
         menu,setMenu,
