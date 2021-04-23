@@ -24,6 +24,9 @@ export const BannerStyle = style({
       fontStyle:'normal',
       letterSpacing:'normal'
     },
+    '& button':{
+      border: 'none'
+    },
     '@media screen and (max-width: 700px)':{
       backgroundPosition: 'center',
       backgroundImage:'url("./assets/bannerMobile.jpeg")',

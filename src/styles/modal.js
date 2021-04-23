@@ -296,7 +296,24 @@ export const ModalStyle= style({
                     justifyContent:'center'
                   }
                 }
+              },
+              '.error':{
+                color: 'red',
+                fontSize: Font.micro,
+                paddingLeft: '10px',
+                paddingTop:'3px'
+              },
+              '& .errorNumber':{
+                position:'absolute',
+                bottom:'-15px',
+                right:'45%', 
+                $nest: {
+                  '@media screen and (max-width: 700px)':{
+                    right:'50px', 
+                  }
+                }
               }
+
             }
           },
           '& .sendBackground':{

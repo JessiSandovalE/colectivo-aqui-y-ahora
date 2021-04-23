@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import { useFormik } from 'formik'
+
 import { AppContext } from '../context/AppContext'
 //API
 import { createContact } from '../api/contact'
@@ -8,29 +10,50 @@ import { getCountries } from '../api/counties'
 import { ModalStyle } from '../styles/modal'
 import { button } from '../styles/var'
 
+const validate = values => {
+  const errors = {}
+  if (!values.name){
+    errors.name ='Este campo es requerido'
+  }else if(values.name.legend> 20){
+    errors.name = "Debe tener 20 caracteres o menos"
+  }
+  if (!values.email){
+    errors.email = 'Este campo es requerido'
+  }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+    errors.email = 'Dirección de email invalida'
+  }
+  if (!values.number){
+    errors.number ='Este campo es requerido'
+  }else if(isNaN(values.number)){
+    errors.number = 'Este campo es numerico'
+  }
+  return errors;
+}
+
 const Modal = () => {
   const {
     ViewModal, setViewModal,
-    name, setName,
-    number, setNumber,
-    email, setEmail,
-    comment, setComment,
-    autorization, setAutorization,
     dataSend, setDataSend,
     countries, setCountries,
+    autorization, setAutorization
   } = useContext(AppContext)
+  const [ values, setValues]= React.useState({})
 
-
-  const sendContact = () => {
-    const data = {name, number, email, comment, autorization}
-    if(data) {
+  const formik = useFormik({
+    initialValues:{
+      name:'',
+      number: '',
+      email: '',
+      comment: '',
+    },
+    validate,
+    onSubmit: personalInfo => {
+     const data = {personalInfo, autorization}
+     if(data) {
       createContact(data)
         .then (()=> {
-          setName('')
-          setNumber('')
-          setEmail('')
-          setComment('')
           setAutorization('')
+          formik.resetForm()
           setDataSend(true)
       })
       .catch(()=> {
@@ -40,16 +63,20 @@ const Modal = () => {
         })
     })
     }
+    }
+  })
+
+  const handleChange = event => {
+    setValues(prevValues => ({
+      ...prevValues,
+      [event.target.name] : event.target.value
+    }))
   }
 
   const close = () => {
     setViewModal(null)
     setDataSend(false)
-    setName('')
-    setNumber('')
-    setEmail('')
-    setComment('')
-    setAutorization('')
+    formik.resetForm()
   }
 
   useEffect(() => {
@@ -73,21 +100,25 @@ const Modal = () => {
               <h3 className="title">
                 Contacto
               </h3>
-              <form>
+              <form onSubmit={formik.handleSubmit}>
                 <div className="inputFile">
                   <div className="inputRoot">
                     <input
                       type="text"
                       placeholder="Tu nombre y tus apellidos"
-                      value={name}
-                      onChange={e => setName(e.target.value)}
+                      id="name"
+                      name="name"
+                      onChange={formik.handleChange}
+                      value ={formik.values.name}
                     />
                     <fieldset aria-hidden="true">
                       <legend>Nombre Completo</legend>
                     </fieldset>
                   </div>
+                  {formik.errors.name ? <div className="error">{formik.errors.name}</div>: null}
                 </div>
                 <div className="inputFile phoneData">
+                  <>
                   <div className="inputRoot indicative">
                     <select name="country" >
                       {countries.map(item =>
@@ -107,34 +138,43 @@ const Modal = () => {
                     <input
                       type="text"
                       placeholder="Número"
-                      value={number}
-                      onChange={e => setNumber(e.target.value)}
+                      id="number"
+                      name="number"
+                      onChange={formik.handleChange}
+                      value ={formik.values.number}
                       className='inputPhone'
                     />
                     <fieldset aria-hidden="true">
                       <legend>Número de celular</legend>
                     </fieldset>
                   </div>
+                  </>
+                  {formik.errors.number ? <div className="error errorNumber">{formik.errors.number}</div>: null}
                 </div>
                 <div className="inputFile">
                   <div className="inputRoot">
                     <input
                       type="text"
                       placeholder="Correo electrónico"
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
+                      id="email"
+                      name="email"
+                      onChange={formik.handleChange}
+                      value ={formik.values.email}
                     />
                     <fieldset aria-hidden="true">
                       <legend>Correo electrónico</legend>
                     </fieldset>
                   </div>
+                  {formik.errors.email ? <div className="error">{formik.errors.email}</div>: null}
                 </div>
                 <div className="inputFile">
                   <div className="inputRoot">
                     <textarea
                       placeholder="¿Cuál es el motivo de tu consulta?"
-                      value={comment}
-                      onChange={e => setComment(e.target.value)}
+                      id="comment"
+                      name="comment"
+                      onChange={formik.handleChange}
+                      value ={formik.values.comment}
                     />
                     <fieldset aria-hidden="true">
                       <legend>Comentario (Opcional)</legend>
@@ -152,7 +192,7 @@ const Modal = () => {
                         type="radio"
                         id="si"
                         checked={autorization === 'si'}
-                        onChange = { e => setAutorization('si')}
+                       onChange = { e => setAutorization('si')}
                       />
                       <span className="checkmark"></span>
                     </label>
@@ -164,18 +204,19 @@ const Modal = () => {
                         id="no"
                         checked={autorization === 'no'}
                         onChange = { e => setAutorization('no')}
+
                       />
                       <span className="checkmark"></span>
                     </label>
                   </div>
                 </div>
                 <div className="send">
-                  <div
+                  <button
+                     type="submit"
                     className={`${button} btn-contact`}
-                    onClick={()=> sendContact()}
                   >
                     Enviar datos
-                  </div>
+                  </button>
                 </div>
               </form>
             </>
