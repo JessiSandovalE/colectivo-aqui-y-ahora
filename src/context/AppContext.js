@@ -89,14 +89,11 @@ const AppProvider = ({children})=> {
   ])
   const [ViewModal, setViewModal] = useState(null)
   const [countries, setCountries] = useState([])
-  const [ name, setName] = useState('')
-  const [number, setNumber] = useState('')
-  const [email, setEmail] = useState('')
-  const [comment, setComment] = useState('')
   const [autorization, setAutorization] = useState('')
   const [dataSend, setDataSend] = useState(false)
   const [icon, setIcon] = useState(false)
   const [open, setOpen] =useState(false)
+  const [indicative, setIndicative] = useState('57')
   return(
     <Provider
       value={{
@@ -107,14 +104,11 @@ const AppProvider = ({children})=> {
         helpOption, setHelpOption,
         ViewModal, setViewModal,
         countries, setCountries,
-        name, setName,
-        number, setNumber,
-        email, setEmail,
-        comment, setComment,
         autorization, setAutorization,
         dataSend, setDataSend,
         icon, setIcon,
-        open, setOpen
+        open, setOpen,
+        indicative, setIndicative
       }}
     >
       {children}

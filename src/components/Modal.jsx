@@ -35,7 +35,8 @@ const Modal = () => {
     ViewModal, setViewModal,
     dataSend, setDataSend,
     countries, setCountries,
-    autorization, setAutorization
+    autorization, setAutorization,
+    indicative, setIndicative
   } = useContext(AppContext)
   const [ values, setValues]= React.useState({})
 
@@ -48,7 +49,8 @@ const Modal = () => {
     },
     validate,
     onSubmit: personalInfo => {
-     const data = {personalInfo, autorization}
+     const data = {...personalInfo, indicative, autorization}
+     console.log(data)
      if(data) {
       createContact(data)
         .then (()=> {
@@ -126,10 +128,10 @@ const Modal = () => {
                 <div className="inputFile phoneData">
                   <>
                   <div className="inputRoot indicative">
-                    <select name="country" >
+                    <select name="country" value={indicative} onChange={e=> setIndicative(e.target.value)} >
                       {countries.map(item =>
-                        <option key={item.Afghanistan} value={item.callingCodes[0] && item.callingCodes[0] }>
-                           +{item.callingCodes[0] && item.callingCodes[0]}
+                        <option key={item.name} value={item.callingCodes}>
+                           {item.name}
                         </option>
                       )}
                     </select>

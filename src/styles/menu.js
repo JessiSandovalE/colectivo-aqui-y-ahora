@@ -137,6 +137,8 @@ export const menuStyle = style({
           zIndex: '101',
           margin:'10px 16px ',
           backgroundColor: Color.white,
+          '-webkit-box-shadow': '0px 4px 11px -10px #000000',
+          boxShadow: '0px 4px 11px -10px #000000',
           $nest: {
             '& .lines': {
                 position: "absolute",

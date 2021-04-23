@@ -223,7 +223,7 @@ export const ModalStyle= style({
                 flexDirection: 'row',
                 $nest:{
                   '& .indicative':{
-                    width: '28%',
+                    width: '50%',
                     marginRight:'2%',
                     $nest: {
                       '& select': {
@@ -239,7 +239,7 @@ export const ModalStyle= style({
                         lineHeight: '1.6',
                         letterSpacing: '0.25px',
                         fontSize:Font.normal,
-                        padding:'10px',
+                        padding:'10px 35px 10px 15px',
                         appearance: 'none',
                         backgroundImage: 'url("./assets/arrow.png")',
                         backgroundPosition: 'calc(100% - 8px)',
