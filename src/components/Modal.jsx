@@ -20,6 +20,7 @@ const Modal = () => {
     countries, setCountries,
   } = useContext(AppContext)
 
+
   const sendContact = () => {
     const data = {name, number, email, comment, autorization}
     if(data) {
@@ -90,8 +91,8 @@ const Modal = () => {
                   <div className="inputRoot indicative">
                     <select name="country" >
                       {countries.map(item =>
-                        <option key={item.Afghanistan} value={item.callingCodes[0]}>
-                           +{item.callingCodes[0]}
+                        <option key={item.Afghanistan} value={item.callingCodes[0] && item.callingCodes[0] }>
+                           +{item.callingCodes[0] && item.callingCodes[0]}
                         </option>
                       )}
                     </select>
