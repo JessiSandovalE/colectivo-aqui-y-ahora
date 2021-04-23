@@ -90,7 +90,7 @@ const Modal = () => {
       <div className={ModalStyle}>
         <div className="modal-container">
           <div className="close" onClick={()=> close()}>
-            X
+            <img src="./assets/X.png" alt="Cerrar" width="100%"/>
           </div>
           {!dataSend && (
             <>

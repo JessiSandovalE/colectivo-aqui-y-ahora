@@ -36,9 +36,11 @@ export const ModalStyle= style({
             marginLeft:'-20px'
           },
           '& .close':{
+            width: '28px',
+            height: '28px',
             position: 'absolute',
             right: '20px',
-            top: '10px',
+            top: '20px',
             cursor: 'pointer',
             color: Color.darkBlue,
             fontSize: Font.medium,

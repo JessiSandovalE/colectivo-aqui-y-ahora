@@ -6,7 +6,8 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import { AppContext } from '../context/AppContext'
 import {container, button} from '../styles/var'
 import {ProgramsStyle} from '../styles/programs'
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+
 import Modal from './Modal'
 const Programs = () => {
   const [expanded, setExpanded] = React.useState('panel1')
@@ -26,7 +27,7 @@ const Programs = () => {
           onChange={handleChange(item.id)}
           >
             <AccordionSummary
-              expandIcon={<ArrowUpwardIcon />}
+              expandIcon={<ArrowDownwardIcon />}
               id={item.id}
             >
                 <div className="title">

@@ -62,12 +62,14 @@ export const FooterStyle = style({
       fontSize: Font.principal,
       color: Color.grey,
       margin: '0px',
+      lineHeight:'1.8'
     },
     '& a':{
       fontSize: Font.principal,
       color: Color.grey,
       margin: '0px',
-      textDecoration:'none'
+      textDecoration:'none',
+      lineHeight:'1.8'
     },
     '& .title': {
       fontSize: Font.intermedium,

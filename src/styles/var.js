@@ -37,7 +37,7 @@ export const button = style({
   cursor: 'pointer',
   appearance: 'none',
   borderRadius: '5px',
-  minWidth:'200px'
+  minWidth:'200px',
 })
 
 export const container = style({
