@@ -57,6 +57,7 @@ const Modal = () => {
           setAutorization('')
           formik.resetForm()
           setDataSend(true)
+          setIndicative('57')
       })
       .catch(()=> {
         console.log({
@@ -78,6 +79,7 @@ const Modal = () => {
   const close = () => {
     setViewModal(null)
     setDataSend(false)
+    setIndicative('57')
     formik.resetForm()
   }
 
