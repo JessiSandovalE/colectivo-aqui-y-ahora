@@ -189,8 +189,11 @@ export const ModalStyle= style({
                     $nest: {
                       '& .inputPhone':{
                         paddingLeft:'50px',
+                      },
+                      '@media screen and (max-width: 700px)':{
+                        width: '63%'
                       }
-                    }
+                    },
                   },
                   '& .icon':{
                     width:'25px',
@@ -201,7 +204,7 @@ export const ModalStyle= style({
                     $nest: {
                       '@media screen and (max-width: 700px)':{
                         width:'20px',
-                        height:'20px',
+                      height:'20px',
                       }
                     }
                   }
@@ -243,6 +246,9 @@ export const ModalStyle= style({
                       '& select:focus':{
                         outline:'0'
                       },
+                      '@media screen and (max-width: 700px)':{
+                        width: '35%'
+                      }
                      }
                   }
                 }
