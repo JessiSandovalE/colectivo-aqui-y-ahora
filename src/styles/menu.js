@@ -23,7 +23,13 @@ export const menuStyle = style({
       $nest: {
         '& img': {
           width: '80px',
-          height: '80px'
+          height: '80px',
+          $nest: {
+            '@media screen and (max-width: 320px)':{
+              width: '60px',
+              height: '60px',
+            }
+          }
         }
       }
     },
@@ -150,6 +156,10 @@ export const menuStyle = style({
             '& .lines:last-child': {
                 transform: 'translate(-50%, calc(-50% + 8px))'
             },
+            '@media screen and (max-width: 320px)':{
+              width: '50px',
+              height: '50px',
+            }
           }
          },
          '& .active' :{
