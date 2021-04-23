@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { AppContext } from '../context/AppContext'
 //API
 import { createContact } from '../api/contact'
+import { getCountries } from '../api/counties'
 //Style
 import { ModalStyle } from '../styles/modal'
 import { button } from '../styles/var'
@@ -15,7 +16,8 @@ const Modal = () => {
     email, setEmail,
     comment, setComment,
     autorization, setAutorization,
-    dataSend, setDataSend
+    dataSend, setDataSend,
+    countries, setCountries,
   } = useContext(AppContext)
 
   const sendContact = () => {
@@ -49,6 +51,12 @@ const Modal = () => {
     setAutorization('')
   }
 
+  useEffect(() => {
+    getCountries()
+      .then(response => response.json())
+      .then(result => setCountries(result))
+  },[])
+
   return ViewModal? (
     ReactDOM.createPortal(
       <div className={ModalStyle}>
@@ -78,13 +86,29 @@ const Modal = () => {
                     </fieldset>
                   </div>
                 </div>
-                <div className="inputFile">
-                  <div className="inputRoot">
+                <div className="inputFile phoneData">
+                  <div className="inputRoot indicative">
+                    <select name="country" >
+                      {countries.map(item =>
+                        <option key={item.Afghanistan} value={item.callingCodes[0]}>
+                           +{item.callingCodes[0]}
+                        </option>
+                      )}
+                    </select>
+                    <fieldset aria-hidden="true">
+                      <legend>País</legend>
+                    </fieldset>
+                  </div>
+                  <div className="inputRoot number">
+                    <div className="icon">
+                      <img src="./assets/phone.png"  alt="phone" width="100%"/>
+                    </div>
                     <input
                       type="text"
                       placeholder="Número"
                       value={number}
                       onChange={e => setNumber(e.target.value)}
+                      className='inputPhone'
                     />
                     <fieldset aria-hidden="true">
                       <legend>Número de celular</legend>

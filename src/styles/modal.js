@@ -142,6 +142,7 @@ export const ModalStyle= style({
                       '& textarea:focus':{
                         outline:'0'
                       },
+                      
                       '& fieldset': {
                         display:'block',
                         marginInlineStart:'2px',
@@ -181,6 +182,57 @@ export const ModalStyle= style({
                         }
                       }
                     }
+                  },
+                  '& .number':{
+                    width: '70%',
+                    display:'flex',
+                    $nest: {
+                      '& .inputPhone':{
+                        paddingLeft:'50px',
+                      }
+                    }
+                  },
+                  '& .icon':{
+                    width:'25px',
+                    height:'25px',
+                    position: 'absolute',
+                    left: '35px',
+                    top: '22px'
+                  }
+                }
+              },
+              '& .phoneData':{
+                display:'flex',
+                flexDirection: 'row',
+                $nest:{
+                  '& .indicative':{
+                    width: '28%',
+                    marginRight:'2%',
+                    $nest: {
+                      '& select': {
+                        border: '0',
+                        height:'50px',
+                        margin: '0px',
+                        display:'block',
+                        marginTop:'7px',
+                        color: Color.mediumBlue,
+                        width:'100%',
+                        backgroundColor: Color.darkWhite,
+                        fontFamily: 'Lato-Regular',
+                        lineHeight: '1.6',
+                        letterSpacing: '0.25px',
+                        fontSize:Font.normal,
+                        padding:'10px',
+                        appearance: 'none',
+                        backgroundImage: 'url("./assets/arrow.png")',
+                        backgroundPosition: 'calc(100% - 8px)',
+                        backgroundSize: '30px 30px',
+                        backgroundRepeat: 'no-repeat'
+                      },
+                      '& select:focus':{
+                        outline:'0'
+                      },
+                     }
                   }
                 }
               },
