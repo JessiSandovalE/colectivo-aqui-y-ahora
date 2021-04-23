@@ -197,7 +197,13 @@ export const ModalStyle= style({
                     height:'25px',
                     position: 'absolute',
                     left: '35px',
-                    top: '22px'
+                    top: '22px',
+                    $nest: {
+                      '@media screen and (max-width: 700px)':{
+                        width:'20px',
+                        height:'20px',
+                      }
+                    }
                   }
                 }
               },
@@ -227,7 +233,12 @@ export const ModalStyle= style({
                         backgroundImage: 'url("./assets/arrow.png")',
                         backgroundPosition: 'calc(100% - 8px)',
                         backgroundSize: '30px 30px',
-                        backgroundRepeat: 'no-repeat'
+                        backgroundRepeat: 'no-repeat',
+                        $nest: {
+                          '@media screen and (max-width: 700px)':{
+                            backgroundSize: '20px 20px'
+                          }
+                        }
                       },
                       '& select:focus':{
                         outline:'0'
