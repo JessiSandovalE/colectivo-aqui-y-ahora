@@ -42,8 +42,7 @@ export const menuStyle = style({
       alignItems:'center',
       justifyContent:'space-between',
       borderRadius:'5px',
-      '-webkit-box-shadow': '0px 4px 11px -10px #000000',
-      boxShadow: '0px 4px 11px -10px #000000',
+      filter: 'drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.06))',
       $nest: {
         '& .options': {
           width: '70%',
@@ -140,8 +139,7 @@ export const menuStyle = style({
           zIndex: '101',
           margin:'10px 16px ',
           backgroundColor: Color.white,
-          '-webkit-box-shadow': '0px 4px 11px -10px #000000',
-          boxShadow: '0px 4px 11px -10px #000000',
+          filter: 'drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.06))',
           $nest: {
             '& .lines': {
                 position: "absolute",
