@@ -96,6 +96,11 @@ export const ModalStyle= style({
                         lineHeight: '1.6',
                         letterSpacing: '0.25px',
                         fontSize:Font.normal,
+                        $nest: {
+                          '@media screen and (max-width: 700px)':{
+                            padding:'13.5px 14px',
+                          }
+                        }
                       },
                       '& input::placeholder':{
                         color: Color.mediumBlue,
@@ -127,7 +132,12 @@ export const ModalStyle= style({
                         fontFamily: 'Lato-Regular',
                         fontSize:Font.normal,
                         lineHeight: '1.6',
-                        letterSpacing: '0.25px'
+                        letterSpacing: '0.25px',
+                        $nest: {
+                          '@media screen and (max-width: 700px)':{
+                            height: '70px'
+                          }
+                        }
                       },
                       '& textarea:focus':{
                         outline:'0'
@@ -193,6 +203,14 @@ export const ModalStyle= style({
                         fontSize: Font.intermedium
                       }
                     }
+                  }, 
+                  '@media screen and (max-width: 700px)':{
+                    flexDirection:'column',
+                    $nest:{
+                      '& p': {
+                        width: '100%'
+                      }
+                    }
                   }
                 }
               },
@@ -204,6 +222,9 @@ export const ModalStyle= style({
                 $nest: {
                   '& .btn-contact':{
                     padding: '10px'
+                  },
+                  '@media screen and (max-width: 700px)':{
+                    justifyContent:'center'
                   }
                 }
               }
@@ -225,7 +246,8 @@ export const ModalStyle= style({
             marginTop: '-50px',
             fontFamily: 'Lato-Bold',
             lineHeight: '1.22',
-            zIndex:'2'
+            zIndex:'2',
+
           },
           '& .textSendInfo': {
             fontSize: Font.principal,
@@ -236,7 +258,18 @@ export const ModalStyle= style({
           },
           '@media screen and (max-width: 700px)':{
             width: '300px',
-            maxHeight:'800px',
+            maxHeight:'600px',
+            $nest: {
+             '& .title':{
+               marginBottom:'0',
+               fontSize: Font.medium,
+               marginTop: '-30px',
+             },
+             '& .sendTitle':{
+                marginBottom:'0',
+                fontSize: Font.medium,
+             }
+            }
           }
         }
      }

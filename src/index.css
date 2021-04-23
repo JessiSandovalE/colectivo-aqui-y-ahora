@@ -56,3 +56,15 @@ h4 {
 .custom-radio-btn input:checked + .checkmark {
   display: inline-block;
 }
+
+@media screen and (max-width: 700px){
+  .custom-radio-btn{
+    width: 15px;
+    height: 15px;
+  }
+
+  .custom-radio-btn .checkmark {
+    width:9px;
+    height: 9px;
+  }
+}
