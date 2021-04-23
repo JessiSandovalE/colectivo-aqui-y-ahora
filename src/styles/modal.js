@@ -44,7 +44,13 @@ export const ModalStyle= style({
             cursor: 'pointer',
             color: Color.darkBlue,
             fontSize: Font.medium,
-            zIndex:'2'
+            zIndex:'2',
+            $nest: {
+              '@media screen and (max-width: 700px)':{
+                width: '23px',
+                height:'23px'
+              }
+            }
           },
           '& .title':{
             fontSize: Font.big,
