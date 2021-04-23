@@ -89,7 +89,10 @@ export const ProgramsStyle = style({
       padding:'10px',
       alignSelf: 'center',
       marginBottom:'20px'
-    }
+    },
+    '& .btnModal:hover': {
+      backgroundColor: Color.darkGreen
+    },
   }
 
 })

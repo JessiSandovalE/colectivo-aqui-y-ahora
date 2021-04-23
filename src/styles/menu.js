@@ -58,6 +58,9 @@ export const menuStyle = style({
         '& .btn': {
           padding: '10px 30px'
         },
+        '& .btn:hover': {
+          backgroundColor:Color.darkGreen
+        },
         '@media screen and (max-width: 700px)':{
           display:'none'
         }
@@ -182,6 +185,9 @@ export const menuStyle = style({
           }
       },
       }
+    },
+    '& .active':{
+      color: `${Color.activeLink} !important`,
     },
     '@media screen and (max-width: 700px)':{
       justifyContent:'space-between',

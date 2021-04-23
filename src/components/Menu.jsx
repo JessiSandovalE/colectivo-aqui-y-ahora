@@ -4,6 +4,7 @@ import Modal from './Modal'
 import { AppContext } from '../context/AppContext'
 import { menuStyle } from '../styles/menu'
 import { button } from '../styles/var'
+import { useLocation } from 'react-router'
 
 const Menu = () => {
  const{
@@ -11,13 +12,12 @@ const Menu = () => {
    setOpen,open,
    setIcon,icon
   } = useContext(AppContext)
-
- const changeMenu = () => {
+  const location = useLocation()
+  const changeMenu = () => {
   window.scrollTo(0, 0,)
   setOpen(!open)
   setIcon (!icon)
 }
-
   return (
     <div className={menuStyle}>
       <div className="logo">
@@ -28,7 +28,7 @@ const Menu = () => {
       <div className="navbar">
         <div className="options">
           {menu.map((item)=>
-              <Link  smooth to={item.link} key ={item.title} className="item">
+              <Link smooth to={item.link} key ={item.title} className={`item ${location.hash === item.link ? ' active': ''} `} >
                 {item.title}
               </Link>
           )}

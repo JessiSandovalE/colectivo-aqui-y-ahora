@@ -5,9 +5,11 @@ import { style } from 'typestyle'
 export const Color = {
   darkBlue: '#006890',
   mediumBlue: '#0f4572',
+  activeLink:'#02374B',
   lightBlue:'#1f7eb2',
   blue: '#0099DB',
   green: '#8CC82D',
+  darkGreen:'#669E0C',
   white: '#FFFFFF',
   darkWhite: '#F6F6F6',
   grey: '#4F4F4F'
@@ -38,6 +40,11 @@ export const button = style({
   appearance: 'none',
   borderRadius: '5px',
   minWidth:'200px',
+  $nest: {
+    '& .button:hover':{
+      backgroundColor:Color.darkGreen
+    }
+  }
 })
 
 export const container = style({

@@ -6,19 +6,19 @@ const AppProvider = ({children})=> {
   const [menu,setMenu] = useState([
     {
       title: 'Quiénes Somos',
-      link: '/#about'
+      link: '#about'
     },
     {
       title: 'Metodología',
-      link: '/#methodology'
+      link: '#methodology'
     },
     {
       title: 'Programas de tratamiento',
-      link: '/#programs'
+      link: '#programs'
     },
     {
       title: '¿Cómo ayudar?',
-      link: '/#help-us'
+      link: '#help-us'
     }
   ])
   const [programs, setPrograms] = useState([

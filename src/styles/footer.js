@@ -125,10 +125,12 @@ export const FooterStyle = style({
           alignSelf: 'center',
           marginBottom:'20px',
           marginTop: '30px'
+        },
+        '& .btnModal:hover':{
+          backgroundColor:Color.green
         }
       }
     }
   },
-  
 
 })
