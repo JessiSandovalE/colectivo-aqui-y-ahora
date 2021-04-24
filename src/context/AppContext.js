@@ -89,7 +89,7 @@ const AppProvider = ({children})=> {
   ])
   const [ViewModal, setViewModal] = useState(null)
   const [countries, setCountries] = useState([])
-  const [autorization, setAutorization] = useState('')
+  const [autorization, setAutorization] = useState(null)
   const [dataSend, setDataSend] = useState(false)
   const [icon, setIcon] = useState(false)
   const [open, setOpen] =useState(false)

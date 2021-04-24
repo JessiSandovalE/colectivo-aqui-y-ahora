@@ -27,6 +27,10 @@ const validate = values => {
   }else if(isNaN(values.number)){
     errors.number = 'Este campo es numerico'
   }
+  if (!values.autorization){
+    errors.autorization = 'Este campo es requerido'
+  }
+
   return errors;
 }
 
@@ -35,8 +39,8 @@ const Modal = () => {
     ViewModal, setViewModal,
     dataSend, setDataSend,
     countries, setCountries,
-    autorization, setAutorization,
     indicative, setIndicative
+
   } = useContext(AppContext)
   const [ values, setValues]= React.useState({})
 
@@ -46,15 +50,15 @@ const Modal = () => {
       number: '',
       email: '',
       comment: '',
+      autorization: ''
     },
     validate,
     onSubmit: personalInfo => {
-     const data = {...personalInfo, indicative, autorization}
+     const data = {...personalInfo, indicative}
      console.log(data)
      if(data) {
       createContact(data)
         .then (()=> {
-          setAutorization('')
           formik.resetForm()
           setDataSend(true)
           setIndicative('57')
@@ -195,14 +199,17 @@ const Modal = () => {
                   <p>
                     Autorizo el manejo de mis datos personales de acuerdo a las políticas de tratamiento de datos del Colectivo Aqui y Ahora
                   </p>
+                  <div className="radioButtonOption">
                   <div className="options">
                     <label>Si</label>
                     <label className="custom-radio-btn">
                       <input
                         type="radio"
                         id="si"
-                        checked={autorization === 'si'}
-                       onChange = { e => setAutorization('si')}
+                        name="autorization"
+                        checked={formik.values.autorization === 'si'}
+                        onChange = {formik.handleChange}
+                        value="si"
                       />
                       <span className="checkmark"></span>
                     </label>
@@ -212,12 +219,15 @@ const Modal = () => {
                       <input
                         type="radio"
                         id="no"
-                        checked={autorization === 'no'}
-                        onChange = { e => setAutorization('no')}
-
+                        name="autorization"
+                        checked={formik.values.autorization === 'no'}
+                        onChange = {formik.handleChange}
+                        value="no"
                       />
                       <span className="checkmark"></span>
                     </label>
+                  </div>
+                  {formik.errors.autorization ? <div className="error">{formik.errors.autorization}</div>: null}
                   </div>
                 </div>
                 <div className="send">
