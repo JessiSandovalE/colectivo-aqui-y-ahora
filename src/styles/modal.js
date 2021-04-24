@@ -323,13 +323,23 @@ export const ModalStyle= style({
               '& .errorNumber':{
                 position:'absolute',
                 bottom:'-15px',
-                right:'45%', 
+                right:'160px', 
                 $nest: {
                   '@media screen and (max-width: 700px)':{
                     right:'50px', 
                   }
                 }
-              }
+              },
+              '& .radioError':{
+                alignSelf:'flexStart',
+                paddingTop:'5px',
+                paddingLeft:'2px',
+                $nest:{
+                  '@media screen and (max-width: 700px)':{
+                    alignSelf:'center'
+                  }
+                }
+              },
 
             }
           },

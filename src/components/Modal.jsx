@@ -227,7 +227,7 @@ const Modal = () => {
                       <span className="checkmark"></span>
                     </label>
                   </div>
-                  {formik.errors.autorization ? <div className="error">{formik.errors.autorization}</div>: null}
+                  {formik.errors.autorization ? <div className="error radioError">{formik.errors.autorization}</div>: null}
                   </div>
                 </div>
                 <div className="send">
