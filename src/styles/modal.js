@@ -270,6 +270,12 @@ export const ModalStyle= style({
                     color: Color.grey,
                     width: '60%'
                   },
+                  '& .radioButtonOption':{
+                    display:'flex',
+                    flexDirection:'column',
+                    alignItems:'center',
+                    justifyContent:'center'
+                  },
                   '& .options':{
                     display: 'flex',
                     justifyContent:'center',
@@ -280,7 +286,7 @@ export const ModalStyle= style({
                         fontSize: Font.intermedium
                       }
                     }
-                  }, 
+                  },
                   '@media screen and (max-width: 700px)':{
                     flexDirection:'column',
                     $nest:{
