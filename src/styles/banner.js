@@ -27,7 +27,11 @@ export const BannerStyle = style({
     '& button':{
       border: 'none'
     },
+    '@media screen and (max-width: 1024px)':{
+      height:'50vh',
+    },
     '@media screen and (max-width: 700px)':{
+      height:'100vh',
       backgroundPosition: 'center',
       backgroundImage:'url("./assets/bannerMobile.jpeg")',
       $nest: {

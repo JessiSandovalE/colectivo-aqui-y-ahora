@@ -6,7 +6,7 @@ export const ProgramsStyle = style({
   paddingTop: '50px',
   paddingBottom: '50px',
   fontFamily: 'Lato-Regular',
-  //marginBottom:'120px',
+  boxSizing:'border-box',
   $nest: {
     '& h2':{
       color: Color.darkBlue,
@@ -40,12 +40,22 @@ export const ProgramsStyle = style({
     },
     '& .image': {
       width:'40%',
-      marginTop:'50px'
+      marginTop:'50px',
+      $nest: {
+        '& img':{
+          width:'90%',
+          $nest:{
+            '@media screen and (max-width: 700px)':{
+              width:'100%'
+            }
+          }
+        }
+      }
     },
     '& .info': {
       padding: '50px 0px 50px 0px',
       boxSizing:'border-box',
-      width:'540px',
+      width:'60%',
     },
     '& .btnModal':{
       display: 'none',
@@ -72,7 +82,8 @@ export const ProgramsStyle = style({
     },
     '& .image': {
       width:'100%',
-      marginTop:'30px'
+      marginTop:'30px',
+     
     },
     '& .info': {
       padding: '30px 0',

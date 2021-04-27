@@ -52,8 +52,17 @@ export const container = style({
   padding:'0 140px',
   boxSizing:'border-box',
   $nest:{
+    '@media screen and (max-width: 1024px)':{
+      padding:'0 70px',
+      boxSizing:'border-box',
+    },
+    '@media screen and (max-width: 834px)':{
+      padding:'0 40px',
+      boxSizing:'border-box',
+    },
     '@media screen and (max-width: 700px)':{
       padding:'0 16px',
+      boxSizing:'border-box',
     }
   }
 })

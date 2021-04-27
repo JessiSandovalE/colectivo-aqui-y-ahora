@@ -52,15 +52,25 @@ export const menuStyle = style({
         '& .item':{
           fontSize: Font.normal,
           color: Color.darkBlue,
-          textDecoration: 'none'
+          textDecoration: 'none',
+          $nest:{
+            '@media screen and (max-width: 1024px)':{
+              fontSize: Font.small
+            }
+          }
         },
         '& .btn': {
-          padding: '10px 30px'
+          padding: '10px 30px',
+          $nest: {
+            '@media screen and (max-width: 700px)':{
+              padding: '10px'
+            }
+          }
         },
         '& .btn:hover': {
           backgroundColor:Color.darkGreen
         },
-        '@media screen and (max-width: 700px)':{
+        '@media screen and (max-width: 834px)':{
           display:'none'
         }
       }
@@ -68,7 +78,7 @@ export const menuStyle = style({
     '& .responsive-nav':{
       display: 'none',
       $nest: {
-        '@media screen and (max-width: 700px)':{
+        '@media screen and (max-width: 834px)':{
           flex: 1,
           display: 'flex',
           justifyContent: 'flex-end',
@@ -113,7 +123,8 @@ export const menuStyle = style({
               fontSize: Font.medium,
               color: Color.white,
               textDecoration: 'none',
-              lineHeight:'3'
+              lineHeight:'3',
+              
             },
           }
         },

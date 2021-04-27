@@ -10,7 +10,12 @@ export const AboutStyle = style({
   $nest: {
     '& .aboutImage': {
       width: '839px',
-      marginTop: '-20px'
+      marginTop: '-20px',
+      $nest: {
+        '@media screen and (max-width: 1024px)':{
+          width: '80%'
+        }
+      }
     },
     '& .aboutInfo': {
       width:'100%',
@@ -18,13 +23,20 @@ export const AboutStyle = style({
       justifyContent: 'flex-end',
       $nest: {
         '& .aboutText': {
-          //width: '531px',
           width:'50%',
           paddingRight:'140px',
           color: Color.darkBlue,
           fontSize: Font.intermedium,
           marginTop:'30px',
-          boxSizing:'border-box'
+          boxSizing:'border-box',
+          $nest: {
+            '@media screen and (max-width: 1024px)':{
+              paddingRight:'70px',
+            },
+            '@media screen and (max-width: 834px)':{
+              paddingRight:'40px',
+            }
+          }
         }
       },
     },
@@ -69,11 +81,15 @@ export const AboutStyle = style({
                   }
                 }
               }
+            },
+            '@media screen and (max-width: 834px)':{
+              paddingLeft: '30px',
             }
           }
         }
       }
     },
+
     '@media screen and (max-width: 700px)':{
       marginBottom:'100px',
       $nest: {

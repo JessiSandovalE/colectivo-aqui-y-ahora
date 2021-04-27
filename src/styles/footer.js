@@ -54,7 +54,7 @@ export const FooterStyle = style({
     '& h3': {
       fontSize: Font.big,
       color: Color.darkBlue,
-      width: '530px',
+      width: '100%',
       fontFamily: 'Lato-Bold',
       margin: '7px 0px',
     },
@@ -90,7 +90,7 @@ export const FooterStyle = style({
     '& .btnModal':{
       display: 'none',
     },
-    '@media screen and (max-width: 700px)':{
+    '@media screen and (max-width: 768px)':{
       marginBottom:'30px',
       $nest: {
         '& .bottom':{

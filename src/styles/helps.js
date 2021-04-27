@@ -8,6 +8,7 @@ export const HelpsStyle = style({
   flexDirection:'column',
   marginBottom:'120px',
   paddingTop:'120px',
+  overflowX: 'hidden',
   $nest: {
   '& .helpsInfo':{
     display:'grid',
@@ -24,19 +25,28 @@ export const HelpsStyle = style({
       },
       '& .item2':{
         width:'100%',
+        boxSizing:'border-box',
         $nest: {
           '& .option':{
             display:'flex',
             paddingBottom:'60px',
             $nest: {
               '& .infoOption':{
-                maxWidth: '420px',
+                
                 margin:'0',
                 marginLeft:'20px',
                 marginTop:'10px'
               },
               '@media screen and (max-width: 700px)':{
                 paddingBottom:'30px'
+              }
+            }
+          },
+          '@media screen and (max-width: 1024px)':{
+            paddingRight: '80px',
+            $nest: {
+              '@media screen and (max-width: 700px)':{
+                paddingRight: '30px',
               }
             }
           }
@@ -57,7 +67,7 @@ export const HelpsStyle = style({
    },
    '& p':{
      color: Color.grey,
-     width:'530px'
+     width:'100%'
    },
    '@media screen and (max-width: 700px)': {
      '& .helpsInfo': {
@@ -74,6 +84,7 @@ export const HelpsStyle = style({
     '& .image':{
       marginTop:'40px'
     },
+    
    }
   }
 })

@@ -55,37 +55,62 @@ export const MethodologyStyle = style({
       margin: '0',
       marginBottom: '8px',
     },
-    '@media screen and (max-width: 700px)':{
-      display:'flex',
-      flexDirection:'column',
-      paddingTop:'70px',
-      paddingBottom:'0px',
+    
+    '@media screen and (max-width: 1024px)': {
+      display: 'grid',
       $nest: {
         '& .itemMethodology': {
-          width:'100%',
+          paddingRight:'16px',
           $nest: {
             '& .methodologyInfo':{
-              paddingRight:'16px',
-              marginBottom: '47px',
+              width: '100%',
               $nest: {
                 '& p':{
-                  width: '100%'
+                  width: '100%',
+                  paddingRight: '30px',
+                  boxSizing:'border-box'
                 },
-                '& h2':{
-                  marginTop:'0px'
-                }
               }
-            },
-           
+            }
           }
         },
         '& .itemInfo':{
           width:'100%',
-          padding: '70px 16px',
+          paddingRight: '50px',
           boxSizing:'border-box'
-        }
+        },
+        '@media screen and (max-width: 700px)':{
+          display:'flex',
+          flexDirection:'column',
+          paddingTop:'70px',
+          paddingBottom:'0px',
+          $nest: {
+            '& .itemMethodology': {
+              width:'100%',
+              $nest: {
+                '& .methodologyInfo':{
+                  paddingRight:'16px',
+                  marginBottom: '47px',
+                  $nest: {
+                    '& p':{
+                      width: '100%'
+                    },
+                    '& h2':{
+                      marginTop:'0px'
+                    }
+                  }
+                },
+              }
+            },
+            '& .itemInfo':{
+              width:'100%',
+              padding: '70px 16px',
+              boxSizing:'border-box'
+            }
+          }
+        },
       }
-    }
+    },
 
   }
 })
