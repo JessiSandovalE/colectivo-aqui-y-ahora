@@ -19,6 +19,7 @@ export const MethodologyStyle = style({
         '& .methodologyInfo': {
           marginBottom: '90px',
           paddingRight:'0px',
+          boxSizing:'border-box',
           $nest: {
             '& h2':{
               fontSize: Font.midBig,
@@ -43,7 +44,8 @@ export const MethodologyStyle = style({
       justifyContent: 'center',
       $nest: {
         '& .item': {
-          padding: '5px 0'
+          padding: '5px 0',
+          boxSizing:'border-box'
         }
       }
     },
@@ -55,12 +57,12 @@ export const MethodologyStyle = style({
       margin: '0',
       marginBottom: '8px',
     },
-    
     '@media screen and (max-width: 1024px)': {
       display: 'grid',
       $nest: {
         '& .itemMethodology': {
           paddingRight:'16px',
+          boxSizing:'border-box',
           $nest: {
             '& .methodologyInfo':{
               width: '100%',
@@ -91,6 +93,7 @@ export const MethodologyStyle = style({
                 '& .methodologyInfo':{
                   paddingRight:'16px',
                   marginBottom: '47px',
+                  boxSizing:'border-box',
                   $nest: {
                     '& p':{
                       width: '100%'
